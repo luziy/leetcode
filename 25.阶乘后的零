@@ -1,0 +1,21 @@
+class Solution:
+    def trailingZeroes(self, n: int) -> int:
+        result=[]
+        while n:
+            result.append(n%5)
+            n//=5
+        #print(result)
+        l=[]
+        num=0
+        le=len(result)
+        while le:
+            l.append(num)
+            num=num*5+1
+            le-=1
+        #print(l)
+        finalresult=0
+        for i in range(len(l)):
+            finalresult+=l[i]*result[i]
+        return finalresult
+
+
